@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AuthForm from './AuthForm'
 
-import mutation from '../mutations/Login'
+import LoginMutation from '../mutations/Login'
 import { graphql } from 'react-apollo'
 import query from '../queries/CurrentUser'
 
@@ -34,4 +34,4 @@ class LoginForm extends Component {
     }
 }
 
-export default graphql(mutation)(LoginForm)
+export default graphql(LoginMutation)(LoginForm)
