@@ -15,6 +15,7 @@ class AuthForm extends Component {
     }
 
     render() {
+        const { errors } = this.props.errors
         return (
             <div className="row">
                 <form className="col s4" onSubmit={e => this.submitHandler(e)}>
@@ -34,6 +35,10 @@ class AuthForm extends Component {
                             onChange={e => this.setState({ password: e.target.value })}
                         />
                     </div>
+                    <div className="errors">
+                        {this.props.errors.map(error => <div key={error}>{error}</div>)}
+                    </div>
+
                     <button className="btn">Submit</button>
                 </form>
             </div>
